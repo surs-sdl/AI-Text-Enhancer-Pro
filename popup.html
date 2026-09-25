@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>AI Text Enhancer Pro</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 360px;
+      font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      padding: 16px;
+    }
+    .container {
+      background: white;
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    h2 {
+      font-size: 20px;
+      margin-bottom: 4px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .sub {
+      font-size: 11px;
+      color: #666;
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #333;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      font-size: 12px;
+      font-family: monospace;
+      margin-bottom: 16px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .status {
+      margin-top: 12px;
+      font-size: 11px;
+      text-align: center;
+      padding: 8px;
+      border-radius: 8px;
+    }
+    .status.success { background: #e8f5e9; color: #2e7d32; }
+    .status.error { background: #ffebee; color: #c62828; }
+    .info {
+      font-size: 10px;
+      color: #888;
+      text-align: center;
+      margin-top: 12px;
+    }
+    a { color: #667eea; text-decoration: none; }
+    hr { margin: 16px 0; border: none; border-top: 1px solid #eee; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h2>✨ AI Text Enhancer Pro</h2>
+  <div class="sub">Enter your API keys – internet connection required.</div>
+
+  <label>🔑 Gemini API Key</label>
+  <input type="password" id="geminiKey" placeholder="Paste your Gemini key">
+
+  <label>🟠 OpenRouter API Key (fallback)</label>
+  <input type="password" id="openrouterKey" placeholder="Paste your OpenRouter key">
+
+  <button id="saveBtn">💾 Save Keys</button>
+  <div id="statusMsg" class="status"></div>
+
+  <hr>
+
+  <div class="info">
+    🌐 <strong>Online API enhancement only</strong><br>
+    Get Gemini key: <a href="https://aistudio.google.com/apikey" target="_blank">aistudio.google.com/apikey</a><br>
+    Get OpenRouter key: <a href="https://openrouter.ai/keys" target="_blank">openrouter.ai/keys</a><br><br>
+    ✨ Mode selector is now on the floating button – no need to open popup to change mode.<br>
+    💡 The button appears when you click into a text field.
+  </div>
+</div>
+<script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+{
+  "manifest_version": 3,
+  "name": "AI Text Enhancer Pro",
+  "version": "6.0",
+  "description": "Enhance or generate text with AI – Grammar, Nepali Formal, Email, Image/Video prompts, Marketing, Summaries, Translations, and more.",
+
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting",
+    "contextMenus"
+  ],
+
+  "host_permissions": [
+    "https://generativelanguage.googleapis.com/*",
+    "https://openrouter.ai/*"
+  ],
+
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "AI Text Enhancer Pro",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_end",
+      "all_frames": true
+    }
+  ],
+
+  "commands": {
+  "enhance-text": {
+    "suggested_key": {
+      "default": "Ctrl+Shift+E",
+      "mac": "Command+Shift+E"
+    },
+    "description": "Enhance text in the active text field"
+  }
+}
+}

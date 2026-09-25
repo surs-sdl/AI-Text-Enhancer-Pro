@@ -1,0 +1,39 @@
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor / IDE settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+
+# Local environment / secret files
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Build / package artifacts
+node_modules/
+dist/
+build/
+*.crx
+*.zip
+
+# Test / coverage artifacts
+coverage/
+.nyc_output/
+
+# Local scratch files
+scratch/
+tmp/
+temp/

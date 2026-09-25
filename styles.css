@@ -1,0 +1,852 @@
+/* =========================================================
+   AI TEXT ENHANCER PRO
+   styles.css
+
+   Contains:
+   - Corner generating loader
+   - Notification animation
+   - Floating enhancer interaction
+   - Mode-based animated text-field borders
+========================================================= */
+
+
+/* =========================================================
+   CORNER GENERATING LOADER
+========================================================= */
+
+@keyframes aiQuantumPulse {
+  0% {
+    transform: scale(0.96);
+
+    opacity: 0.78;
+
+    box-shadow:
+      0 0 0 0
+      rgba(102, 126, 234, 0.55);
+  }
+
+  50% {
+    transform: scale(1.03);
+
+    opacity: 1;
+
+    box-shadow:
+      0 0 0 14px
+      rgba(102, 126, 234, 0);
+  }
+
+  100% {
+    transform: scale(0.96);
+
+    opacity: 0.78;
+
+    box-shadow:
+      0 0 0 0
+      rgba(102, 126, 234, 0);
+  }
+}
+
+
+.ai-loader-quantum {
+  position: fixed;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding:
+    10px 16px;
+
+  color: white;
+
+  background:
+    linear-gradient(
+      135deg,
+      #667eea 0%,
+      #764ba2 100%
+    );
+
+  border-radius: 12px;
+
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: 13px;
+
+  font-weight: 500;
+
+  box-shadow:
+    0 8px 25px
+    rgba(0, 0, 0, 0.22);
+
+  animation:
+    aiQuantumPulse
+    1.2s
+    ease-in-out
+    infinite;
+
+  backdrop-filter:
+    blur(8px);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   NOTIFICATION
+========================================================= */
+
+@keyframes aiNotificationSlideIn {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(14px)
+      scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+
+.ai-notification {
+  animation:
+    aiNotificationSlideIn
+    0.22s
+    ease-out;
+}
+
+
+/* =========================================================
+   FLOATING ENHANCE BUTTON
+========================================================= */
+
+#ai-enhance-btn-drag {
+  transition:
+    box-shadow 0.15s ease,
+    transform 0.1s ease;
+}
+
+
+#ai-enhance-btn-drag:active {
+  transform:
+    scale(0.98);
+}
+
+
+/* =========================================================
+   BASE FIELD BORDER OVERLAY
+========================================================= */
+
+.ai-field-border-loader {
+  position: fixed;
+
+  pointer-events: none;
+
+  z-index: 2147483645;
+
+  box-sizing: border-box;
+
+  border:
+    2px solid
+    transparent;
+
+  border-radius: 12px;
+
+  opacity: 1;
+
+  /*
+    Position is updated by
+    JavaScript while generating.
+  */
+
+  transition:
+    left 0.06s linear,
+    top 0.06s linear,
+    width 0.06s linear,
+    height 0.06s linear;
+
+  /*
+    Prevent the overlay from
+    interfering with the website.
+  */
+
+  user-select: none;
+
+  touch-action: none;
+
+  will-change:
+    transform,
+    border-color,
+    box-shadow,
+    filter;
+}
+
+
+/* =========================================================
+   1. QUANTUM
+   General Enhancement
+========================================================= */
+
+@keyframes aiQuantumBorder {
+  0% {
+    border-color:
+      #667eea;
+
+    box-shadow:
+      0 0 0 1px
+      rgba(102,126,234,0.65),
+
+      0 0 8px
+      rgba(102,126,234,0.5);
+  }
+
+  50% {
+    border-color:
+      #a855f7;
+
+    box-shadow:
+      0 0 0 2px
+      rgba(168,85,247,0.8),
+
+      0 0 20px
+      rgba(118,75,162,0.8);
+  }
+
+  100% {
+    border-color:
+      #667eea;
+
+    box-shadow:
+      0 0 0 1px
+      rgba(102,126,234,0.65),
+
+      0 0 8px
+      rgba(102,126,234,0.5);
+  }
+}
+
+
+.ai-border-quantum {
+  animation:
+    aiQuantumBorder
+    1.25s
+    ease-in-out
+    infinite;
+}
+
+
+/* =========================================================
+   2. FLOW
+   Grammar / Summary
+========================================================= */
+
+@keyframes aiFlowBorder {
+  0% {
+    border-color:
+      #4f8cff
+      transparent
+      transparent
+      #4f8cff;
+
+    box-shadow:
+      0 0 8px
+      rgba(79,140,255,0.45);
+  }
+
+  25% {
+    border-color:
+      #62d0ff
+      #4f8cff
+      transparent
+      transparent;
+  }
+
+  50% {
+    border-color:
+      transparent
+      #62d0ff
+      #4f8cff
+      transparent;
+
+    box-shadow:
+      0 0 17px
+      rgba(98,208,255,0.7);
+  }
+
+  75% {
+    border-color:
+      transparent
+      transparent
+      #62d0ff
+      #4f8cff;
+  }
+
+  100% {
+    border-color:
+      #4f8cff
+      transparent
+      transparent
+      #4f8cff;
+
+    box-shadow:
+      0 0 8px
+      rgba(79,140,255,0.45);
+  }
+}
+
+
+.ai-border-flow {
+  animation:
+    aiFlowBorder
+    1.25s
+    linear
+    infinite;
+}
+
+
+/* =========================================================
+   3. ROYAL
+   Nepali Formal
+========================================================= */
+
+@keyframes aiRoyalBorder {
+  0%,
+  100% {
+    border-color:
+      #7c3aed;
+
+    box-shadow:
+      0 0 0 1px
+      rgba(124,58,237,0.6),
+
+      0 0 8px
+      rgba(124,58,237,0.45);
+  }
+
+  50% {
+    border-color:
+      #d4af37;
+
+    box-shadow:
+      0 0 0 2px
+      rgba(212,175,55,0.78),
+
+      0 0 20px
+      rgba(212,175,55,0.65);
+  }
+}
+
+
+.ai-border-royal {
+  animation:
+    aiRoyalBorder
+    1.8s
+    ease-in-out
+    infinite;
+}
+
+
+/* =========================================================
+   4. SWEEP
+   Professional / Email
+========================================================= */
+
+@keyframes aiSweepBorder {
+  0% {
+    border-color:
+      rgba(70,130,255,0.75);
+
+    box-shadow:
+      -9px 0 12px -5px
+      rgba(70,130,255,1);
+  }
+
+  25% {
+    box-shadow:
+      0 -9px 12px -5px
+      rgba(70,130,255,1);
+  }
+
+  50% {
+    box-shadow:
+      9px 0 12px -5px
+      rgba(70,130,255,1);
+  }
+
+  75% {
+    box-shadow:
+      0 9px 12px -5px
+      rgba(70,130,255,1);
+  }
+
+  100% {
+    border-color:
+      rgba(70,130,255,0.75);
+
+    box-shadow:
+      -9px 0 12px -5px
+      rgba(70,130,255,1);
+  }
+}
+
+
+.ai-border-sweep {
+  animation:
+    aiSweepBorder
+    1.45s
+    linear
+    infinite;
+}
+
+
+/* =========================================================
+   5. AURORA
+   Creative
+========================================================= */
+
+@keyframes aiAuroraBorder {
+  0% {
+    border-color:
+      #ff70a6;
+
+    box-shadow:
+      0 0 9px
+      rgba(255,112,166,0.7);
+  }
+
+  25% {
+    border-color:
+      #70d6ff;
+
+    box-shadow:
+      0 0 15px
+      rgba(112,214,255,0.7);
+  }
+
+  50% {
+    border-color:
+      #b388ff;
+
+    box-shadow:
+      0 0 22px
+      rgba(179,136,255,0.75);
+  }
+
+  75% {
+    border-color:
+      #70ffd6;
+
+    box-shadow:
+      0 0 15px
+      rgba(112,255,214,0.7);
+  }
+
+  100% {
+    border-color:
+      #ff70a6;
+
+    box-shadow:
+      0 0 9px
+      rgba(255,112,166,0.7);
+  }
+}
+
+
+.ai-border-aurora {
+  animation:
+    aiAuroraBorder
+    2.2s
+    ease-in-out
+    infinite;
+}
+
+
+/* =========================================================
+   6. NEON
+   Image Prompt
+========================================================= */
+
+@keyframes aiNeonBorder {
+  0%,
+  100% {
+    border-color:
+      #00e5ff;
+
+    box-shadow:
+      0 0 5px
+      rgba(0,229,255,0.95),
+
+      0 0 12px
+      rgba(0,229,255,0.75);
+  }
+
+  50% {
+    border-color:
+      #ff00e5;
+
+    box-shadow:
+      0 0 7px
+      rgba(255,0,229,1),
+
+      0 0 24px
+      rgba(255,0,229,0.78);
+  }
+}
+
+
+.ai-border-neon {
+  animation:
+    aiNeonBorder
+    1.05s
+    ease-in-out
+    infinite;
+}
+
+
+/* =========================================================
+   7. CINEMATIC
+   Video Prompt
+========================================================= */
+
+@keyframes aiCinematicBorder {
+  0% {
+    border-color:
+      #ff9500;
+
+    box-shadow:
+      0 0 6px
+      rgba(255,149,0,0.5);
+  }
+
+  50% {
+    border-color:
+      #ff3b30;
+
+    box-shadow:
+      0 0 22px
+      rgba(255,59,48,0.8);
+  }
+
+  100% {
+    border-color:
+      #ff9500;
+
+    box-shadow:
+      0 0 6px
+      rgba(255,149,0,0.5);
+  }
+}
+
+
+.ai-border-cinematic {
+  animation:
+    aiCinematicBorder
+    1.4s
+    ease-in-out
+    infinite;
+}
+
+
+/* =========================================================
+   8. PULSE
+   Marketing
+========================================================= */
+
+@keyframes aiMarketingPulse {
+  0%,
+  100% {
+    transform:
+      scale(1);
+
+    border-color:
+      #ff6b6b;
+
+    box-shadow:
+      0 0 6px
+      rgba(255,107,107,0.45);
+  }
+
+  50% {
+    transform:
+      scale(1.006);
+
+    border-color:
+      #ffd166;
+
+    box-shadow:
+      0 0 20px
+      rgba(255,209,102,0.82);
+  }
+}
+
+
+.ai-border-pulse {
+  animation:
+    aiMarketingPulse
+    1s
+    ease-in-out
+    infinite;
+}
+
+
+/* =========================================================
+   9. TRAVEL
+   Translation
+========================================================= */
+
+@keyframes aiTravelBorder {
+  0% {
+    border-color:
+      #00b894
+      transparent
+      transparent
+      transparent;
+
+    box-shadow:
+      0 0 8px
+      rgba(0,184,148,0.5);
+  }
+
+  25% {
+    border-color:
+      transparent
+      #00cec9
+      transparent
+      transparent;
+  }
+
+  50% {
+    border-color:
+      transparent
+      transparent
+      #0984e3
+      transparent;
+
+    box-shadow:
+      0 0 15px
+      rgba(9,132,227,0.6);
+  }
+
+  75% {
+    border-color:
+      transparent
+      transparent
+      transparent
+      #6c5ce7;
+  }
+
+  100% {
+    border-color:
+      #00b894
+      transparent
+      transparent
+      transparent;
+
+    box-shadow:
+      0 0 8px
+      rgba(0,184,148,0.5);
+  }
+}
+
+
+.ai-border-travel {
+  animation:
+    aiTravelBorder
+    1s
+    linear
+    infinite;
+}
+
+
+/* =========================================================
+   10. ORBIT
+   Expand / Question
+========================================================= */
+
+@keyframes aiOrbitBorder {
+  0% {
+    border-color:
+      rgba(142,125,255,0.8);
+
+    box-shadow:
+      -7px -7px 12px -5px
+      #8e7dff;
+  }
+
+  25% {
+    box-shadow:
+      7px -7px 12px -5px
+      #8e7dff;
+  }
+
+  50% {
+    box-shadow:
+      7px 7px 12px -5px
+      #8e7dff;
+  }
+
+  75% {
+    box-shadow:
+      -7px 7px 12px -5px
+      #8e7dff;
+  }
+
+  100% {
+    border-color:
+      rgba(142,125,255,0.8);
+
+    box-shadow:
+      -7px -7px 12px -5px
+      #8e7dff;
+  }
+}
+
+
+.ai-border-orbit {
+  animation:
+    aiOrbitBorder
+    1.35s
+    linear
+    infinite;
+}
+
+
+/* =========================================================
+   11. MINIMAL
+   Shorten / Simplify
+========================================================= */
+
+@keyframes aiMinimalBorder {
+  0%,
+  100% {
+    border-color:
+      rgba(80,160,255,0.35);
+
+    box-shadow:
+      0 0 3px
+      rgba(80,160,255,0.2);
+  }
+
+  50% {
+    border-color:
+      rgba(80,160,255,1);
+
+    box-shadow:
+      0 0 12px
+      rgba(80,160,255,0.6);
+  }
+}
+
+
+.ai-border-minimal {
+  animation:
+    aiMinimalBorder
+    1.5s
+    ease-in-out
+    infinite;
+}
+
+
+/* =========================================================
+   12. PLAYFUL
+   ELI5
+========================================================= */
+
+@keyframes aiPlayfulBorder {
+  0% {
+    border-color:
+      #ff9f1c;
+
+    box-shadow:
+      0 0 6px
+      rgba(255,159,28,0.5);
+  }
+
+  33% {
+    border-color:
+      #2ec4b6;
+
+    box-shadow:
+      0 0 14px
+      rgba(46,196,182,0.65);
+  }
+
+  66% {
+    border-color:
+      #e71d36;
+
+    box-shadow:
+      0 0 14px
+      rgba(231,29,54,0.6);
+  }
+
+  100% {
+    border-color:
+      #ff9f1c;
+
+    box-shadow:
+      0 0 6px
+      rgba(255,159,28,0.5);
+  }
+}
+
+
+.ai-border-playful {
+  animation:
+    aiPlayfulBorder
+    1.7s
+    ease-in-out
+    infinite;
+}
+
+
+/* =========================================================
+   REDUCED MOTION ACCESSIBILITY
+========================================================= */
+
+@media (
+  prefers-reduced-motion:
+  reduce
+) {
+
+  .ai-loader-quantum {
+    animation:
+      none !important;
+  }
+
+
+  .ai-field-border-loader {
+    animation:
+      none !important;
+
+    transform:
+      none !important;
+
+    border-color:
+      #667eea !important;
+
+    box-shadow:
+      0 0 10px
+      rgba(102,126,234,0.55)
+      !important;
+  }
+
+
+  .ai-notification {
+    animation:
+      none !important;
+  }
+}
