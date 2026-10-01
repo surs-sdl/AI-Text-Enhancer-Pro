@@ -1,129 +1,134 @@
-✨ AI Text Enhancer Pro
+# ✨ AI Text Enhancer Pro
 
 AI Text Enhancer Pro is a Chrome Manifest V3 extension that enhances, rewrites, translates, summarizes, and generates text directly inside editable fields on the web.
 
-It adds a floating mode selector and Enhance button near the active text field, supports a keyboard shortcut, and uses Google Gemini as the primary AI provider with OpenRouter as an optional fallback.
+It adds a floating mode selector and **Enhance** button near the active text field, supports a keyboard shortcut, and uses **Google Gemini** as the primary AI provider with **OpenRouter** as an optional fallback.
 
-«🔑 First-time setup: This extension requires your own AI API key.
-You can create a Gemini API key at:
-https://aistudio.google.com/apikey
-
-OpenRouter can optionally be configured as a fallback:
-https://openrouter.ai/keys
-
-After installing the extension, open its popup, paste your API key, and click Save Keys.»
+> **🔑 First-time setup:** This extension requires your own AI API key.
+>
+> Create a Gemini API key here:
+>
+> **https://aistudio.google.com/apikey**
+>
+> OpenRouter can optionally be configured as a fallback:
+>
+> **https://openrouter.ai/keys**
+>
+> After installing the extension, open the extension popup, paste your API key, and click **Save Keys**.
 
 ---
 
-✨ Highlights
+## ✨ Highlights
 
 - Works with standard inputs, textareas, contenteditable editors, React-based editors, and ProseMirror-style editors.
-- Floating draggable toolbar with 17 AI text modes.
+- Floating draggable toolbar with **17 AI text modes**.
 - Mode-specific animated loading borders around the active editor while a request is running.
-- Separate compact Generating... status loader.
-- Gemini as the primary AI provider with automatic OpenRouter fallback.
-- Ctrl + Shift + E shortcut on Windows/Linux.
-- Command + Shift + E shortcut on macOS.
-- Right-click Enhance with AI context-menu action for selected text.
+- Separate compact **Generating...** status loader.
+- Gemini primary provider with automatic OpenRouter fallback.
+- **Ctrl + Shift + E** shortcut on Windows/Linux.
+- **Command + Shift + E** shortcut on macOS.
+- Right-click **Enhance with AI** context-menu action for selected text.
 - API keys are entered through the extension popup and stored in Chrome extension storage instead of being hardcoded in the source.
 - Manual compatibility testing has covered ChatGPT, Gmail, Facebook comments/posts, Messenger, Gemini, Meta AI, and NotebookLM.
 
 ---
 
-🧠 Text Modes
+## 🧠 Text Modes
 
-Mode| Purpose
-Grammar & Spelling| Correct grammar and spelling while preserving meaning
-Nepali Formal| Rewrite text in formal Nepali using Devanagari
-Professional| Rewrite in a polished business tone
-Creative| Produce more vivid and expressive writing
-Image Prompt| Expand an idea into a detailed AI image prompt
-Video Prompt| Expand an idea into a detailed AI video prompt
-Email| Turn input into a complete professional email
-Shorten| Make text concise while retaining key information
-Expand| Add useful detail, explanation, and context
-Simplify| Rewrite using clearer and easier language
-Marketing| Produce persuasive marketing copy
-Question| Convert a statement into a natural question
-Summary| Condense text into its key points
-English → Nepali| Translate English into natural Nepali
-Nepali → English| Translate Nepali into natural English
-ELI5| Explain a concept in very simple language
-General Enhancement| Improve grammar, clarity, readability, and professionalism
+| Mode | Purpose |
+|---|---|
+| Grammar & Spelling | Correct grammar and spelling while preserving meaning |
+| Nepali Formal | Rewrite text in formal Nepali using Devanagari |
+| Professional | Rewrite in a polished business tone |
+| Creative | Produce more vivid and expressive writing |
+| Image Prompt | Expand an idea into a detailed AI image prompt |
+| Video Prompt | Expand an idea into a detailed AI video prompt |
+| Email | Turn input into a complete professional email |
+| Shorten | Make text concise while retaining key information |
+| Expand | Add useful detail, explanation, and context |
+| Simplify | Rewrite using clearer and easier language |
+| Marketing | Produce persuasive marketing copy |
+| Question | Convert a statement into a natural question |
+| Summary | Condense text into its key points |
+| English → Nepali | Translate English into natural Nepali |
+| Nepali → English | Translate Nepali into natural English |
+| ELI5 | Explain a concept in very simple language |
+| General Enhancement | Improve grammar, clarity, readability, and professionalism |
 
-Each mode also maps to its own visual loading style, such as Flow, Aurora, Neon, Sweep, Travel, or Quantum.
+Each mode also maps to its own visual loading style, such as **Flow, Aurora, Neon, Sweep, Travel, or Quantum**.
 
 ---
 
-⚙️ How It Works
+## ⚙️ How It Works
 
 1. Click or focus an editable text field on a supported webpage.
 2. The extension displays a floating toolbar near the active editor.
-3. Choose an enhancement mode.
-4. Click Enhance or press the keyboard shortcut.
+3. Choose a mode.
+4. Click **Enhance** or press the keyboard shortcut.
 5. A mode-specific animated border appears around the active editor while the AI request is processed.
 6. The generated result replaces the original text in the editor.
 7. If the primary Gemini request fails and an OpenRouter key is available, the extension automatically attempts OpenRouter.
 
 ---
 
-🚀 Installation & First-Time Setup
+# 🚀 Installation
 
 This project is currently intended for local/unpacked Chrome installation.
 
-Step 1 — Download the Extension
+## Step 1 — Download the Project
 
 Download or clone this repository.
 
-If you downloaded the project as a ZIP file:
+If you download it as a ZIP file:
 
 1. Download the ZIP.
-2. Extract it to a folder.
-3. Make sure the folder containing "manifest.json" is available.
+2. Extract the ZIP file.
+3. Open the extracted project folder.
+4. Make sure `manifest.json` is inside the folder.
 
 ---
 
-Step 2 — Open Chrome Extensions
+## Step 2 — Open Chrome Extensions
 
 Open Chrome and go to:
 
-"chrome://extensions"
+`chrome://extensions`
 
 Then:
 
-1. Enable Developer mode.
-2. Click Load unpacked.
-3. Select the project folder containing "manifest.json".
-4. AI Text Enhancer Pro should now appear in your extensions list.
-5. Pin the extension from the Chrome Extensions menu if desired.
+1. Enable **Developer mode**.
+2. Click **Load unpacked**.
+3. Select the project folder containing `manifest.json`.
+4. AI Text Enhancer Pro should appear in the extensions list.
+5. Pin the extension from the Extensions menu if desired.
 
-After changing source files during development, click Reload on the extension card and refresh any already-open test pages.
+After changing source files during development, click **Reload** on the extension card and refresh any already-open test pages.
 
 ---
 
-🔑 API Setup
+# 🔑 API Setup
 
 AI Text Enhancer Pro requires at least one AI provider API key.
 
-The recommended setup is Google Gemini.
+The recommended setup is **Google Gemini**.
 
-OpenRouter can optionally be added as a fallback provider.
+OpenRouter can optionally be configured as a fallback provider.
 
 ---
 
-🟦 Option 1 — Google Gemini API Key
+## 🟦 Google Gemini API Key
 
-Gemini is used as the primary AI provider.
+Gemini is used as the **primary AI provider**.
 
-Get your Gemini API key here:
+### Get your Gemini API key here
 
-https://aistudio.google.com/apikey
+**https://aistudio.google.com/apikey**
 
-Setup Steps
+### Setup Steps
 
 1. Open:
-   
-   https://aistudio.google.com/apikey
+
+   **https://aistudio.google.com/apikey**
 
 2. Sign in with your Google account.
 
@@ -131,172 +136,175 @@ Setup Steps
 
 4. Copy the generated API key.
 
-5. Open the AI Text Enhancer Pro extension from the Chrome toolbar.
+5. Open the **AI Text Enhancer Pro** extension popup.
 
 6. Find:
-   
-   Gemini API Key
+
+   **Gemini API Key**
 
 7. Paste your personal Gemini API key into the field.
 
 8. Click:
-   
-   💾 Save Keys
 
-The extension can now use Gemini to process your AI enhancement requests.
+   **💾 Save Keys**
+
+The extension can now use Gemini for AI text enhancement.
 
 ---
 
-🟠 Option 2 — OpenRouter API Key
+## 🟠 OpenRouter API Key
 
 OpenRouter can be configured as an optional fallback provider.
 
-Get your OpenRouter API key here:
+### Get your OpenRouter API key here
 
-https://openrouter.ai/keys
+**https://openrouter.ai/keys**
 
-Setup Steps
+### Setup Steps
 
 1. Open:
-   
-   https://openrouter.ai/keys
+
+   **https://openrouter.ai/keys**
 
 2. Sign in or create an OpenRouter account.
 
 3. Create an API key.
 
-4. Copy the generated key.
+4. Copy the generated API key.
 
-5. Open the AI Text Enhancer Pro extension popup.
+5. Open the **AI Text Enhancer Pro** extension popup.
 
 6. Find:
-   
-   OpenRouter API Key (fallback)
 
-7. Paste your OpenRouter API key.
+   **OpenRouter API Key (fallback)**
+
+7. Paste the key.
 
 8. Click:
-   
-   💾 Save Keys
+
+   **💾 Save Keys**
 
 If Gemini fails and a valid OpenRouter key is configured, the extension can automatically attempt the request using OpenRouter.
 
 ---
 
-✅ Which API Key Should I Use?
+## ✅ Which API Key Should I Use?
 
-For the simplest setup:
+For the simplest setup, use **Gemini only**.
 
-Use Gemini only.
+Create your Gemini API key here:
 
-Create your key here:
+**https://aistudio.google.com/apikey**
 
-https://aistudio.google.com/apikey
+Then:
 
-Then paste it into the extension popup and click Save Keys.
+1. Open AI Text Enhancer Pro.
+2. Paste the key into **Gemini API Key**.
+3. Click **Save Keys**.
+4. Start using the extension.
 
 You do not need an OpenRouter key unless you want a fallback provider.
 
 ---
 
-⚡ Quick Setup
+## ⚡ Quick Setup
 
-1. Download AI Text Enhancer Pro
-
-↓
-
-2. Open "chrome://extensions"
+**1. Download AI Text Enhancer Pro**
 
 ↓
 
-3. Enable Developer mode
+**2. Open `chrome://extensions`**
 
 ↓
 
-4. Click Load unpacked
+**3. Enable Developer mode**
 
 ↓
 
-5. Select the extension folder
+**4. Click Load unpacked**
 
 ↓
 
-6. Create a Gemini API key
-
-https://aistudio.google.com/apikey
+**5. Select the extension folder**
 
 ↓
 
-7. Open the AI Text Enhancer Pro popup
+**6. Create a Gemini API key**
+
+**https://aistudio.google.com/apikey**
 
 ↓
 
-8. Paste your Gemini API key
+**7. Open AI Text Enhancer Pro**
 
 ↓
 
-9. Click Save Keys
+**8. Paste your Gemini API key**
 
 ↓
 
-10. Start enhancing text ✨
+**9. Click Save Keys**
+
+↓
+
+**10. Start enhancing text ✨**
 
 ---
 
-🔐 API Key Storage & Security
+## 🔐 API Key Storage & Security
 
 API keys are entered through the extension popup and stored using:
 
-"chrome.storage.local"
+`chrome.storage.local`
 
-API keys are not included in this repository and should never be hardcoded into the extension source.
+API keys are **not included in this repository** and should never be hardcoded into the source files.
 
-Important Security Notes
+### Important Security Notes
 
 - Never commit your real API key to GitHub.
-- Never paste your personal API key into "background.js".
-- Never paste your personal API key into "content.js".
-- Never paste your personal API key into "popup.js".
+- Never paste a real API key directly into `background.js`.
+- Never paste a real API key directly into `content.js`.
+- Never paste a real API key directly into `popup.js`.
 - Do not publish screenshots containing your API key.
 - Each user should create and use their own API key.
 - Chrome extension local storage should not be treated as a general-purpose encrypted secrets vault.
-- Use API keys intended for your own extension usage.
-- Review and manage provider quotas, billing, and limits appropriately.
+- Review and manage provider quotas, limits, and billing appropriately.
 
 ---
 
-⌨️ Keyboard Shortcut
+## ⌨️ Keyboard Shortcut
 
 Default shortcut:
 
-Windows / Linux
+### Windows / Linux
 
-"Ctrl + Shift + E"
+`Ctrl + Shift + E`
 
-macOS
+### macOS
 
-"Command + Shift + E"
+`Command + Shift + E`
 
 Chrome may leave a suggested shortcut unassigned if it conflicts with another browser, operating-system, or extension shortcut.
 
 Users can inspect or change shortcut assignments at:
 
-"chrome://extensions/shortcuts"
+`chrome://extensions/shortcuts`
 
 ---
 
-🖱️ Context Menu
+## 🖱️ Context Menu
 
 Select text on a webpage and right-click to use:
 
-✨ Enhance with AI
+**✨ Enhance with AI**
 
 The currently selected enhancement mode is used for the request.
 
 ---
 
-📁 Project Structure
+## 📁 Project Structure
 
+```text
 AI-Text-Enhancer-Pro/
 ├── icons/
 │   ├── icon16.png
@@ -317,12 +325,13 @@ AI-Text-Enhancer-Pro/
 ├── README.md
 ├── LICENSE
 └── .gitignore
+```
 
 ---
 
-🧩 Main Files
+## 🧩 Main Files
 
-"background.js"
+### `background.js`
 
 Handles:
 
@@ -332,7 +341,7 @@ Handles:
 - Keyboard shortcut handling
 - Stored settings synchronization
 
-"content.js"
+### `content.js`
 
 Handles:
 
@@ -342,7 +351,7 @@ Handles:
 - Dynamic-page support
 - Loading-border behavior
 
-"styles.css"
+### `styles.css`
 
 Handles:
 
@@ -351,7 +360,7 @@ Handles:
 - Floating interface styling
 - Mode-based field-border animations
 
-"popup.html" / "popup.js"
+### `popup.html` / `popup.js`
 
 Handles:
 
@@ -359,7 +368,7 @@ Handles:
 - OpenRouter API-key input
 - Saving provider credentials into Chrome extension storage
 
-"manifest.json"
+### `manifest.json`
 
 Defines:
 
@@ -372,26 +381,27 @@ Defines:
 
 ---
 
-🔐 Permissions
+## 🔐 Permissions
 
 The extension currently requests:
 
-Permission| Why it is used
-"activeTab"| Interact with the active page when needed
-"storage"| Save API keys and the selected mode locally
-"scripting"| Insert enhanced selected text for context-menu actions
-"contextMenus"| Add the right-click enhancement action
+| Permission | Why it is used |
+|---|---|
+| `activeTab` | Interact with the active page when needed |
+| `storage` | Save API keys and the selected mode locally |
+| `scripting` | Insert enhanced selected text for context-menu actions |
+| `contextMenus` | Add the right-click enhancement action |
 
 Host permissions are limited to the configured AI provider endpoints:
 
-- "generativelanguage.googleapis.com"
-- "openrouter.ai"
+- `generativelanguage.googleapis.com`
+- `openrouter.ai`
 
 The content script is configured for web pages so that the toolbar can detect editable fields across supported sites.
 
 ---
 
-🛡️ Privacy Notes
+## 🛡️ Privacy Notes
 
 The extension has no custom application backend in this repository.
 
@@ -416,13 +426,13 @@ to this repository.
 
 ---
 
-🌐 Compatibility
+## 🌐 Compatibility
 
 The editor-detection logic supports common web editing patterns including:
 
-- "<input>"
-- "<textarea>"
-- "contenteditable"
+- `<input>`
+- `<textarea>`
+- `contenteditable`
 - React-controlled fields
 - ProseMirror-style editors
 - Dynamically recreated editors in single-page applications
@@ -441,47 +451,47 @@ Manual compatibility testing has covered:
 
 Websites can change their DOM and editor implementations over time.
 
-A site-specific adjustment may occasionally be required after a major website redesign.
+A site-specific adjustment may occasionally be required after a major redesign.
 
 ---
 
-🖼️ Screenshots
+## 🖼️ Screenshots
 
-Floating Mode Selector
+### Floating Mode Selector
 
 The floating toolbar appears next to the active editor and provides quick access to all 17 enhancement modes.
 
-"AI Text Enhancer Pro floating mode selector" (docs/floating-toolbar.png)
+![AI Text Enhancer Pro floating mode selector](docs/floating-toolbar.png)
 
 ---
 
-Mode-Based Animated Border
+### Mode-Based Animated Border
 
 While a request is running, the active editor receives a mode-specific visual loading border.
 
 The example below shows the Marketing mode.
 
-"Marketing mode animated loading border" (docs/animated-border.png)
+![Marketing mode animated loading border](docs/animated-border.png)
 
 ---
 
-API Settings Popup
+### API Settings Popup
 
 Users can configure Gemini as the primary provider and OpenRouter as the optional fallback from the extension popup.
 
-"AI Text Enhancer Pro API settings popup" (docs/settings-popup.png)
+![AI Text Enhancer Pro API settings popup](docs/settings-popup.png)
 
 ---
 
-Generating Indicator
+### Generating Indicator
 
 A compact generating indicator is displayed while AI output is being generated.
 
-"AI Text Enhancer Pro generating indicator" (docs/generating-loader.png)
+![AI Text Enhancer Pro generating indicator](docs/generating-loader.png)
 
 ---
 
-🧪 Development Checklist
+## 🧪 Development Checklist
 
 Before tagging a release or publishing an update:
 
@@ -492,7 +502,7 @@ Before tagging a release or publishing an update:
 - Test at least one contenteditable editor.
 - Test the floating mode selector.
 - Test the keyboard shortcut.
-- Test the right-click Enhance with AI action.
+- Test the right-click **Enhance with AI** action.
 - Confirm the animated border disappears after successful requests.
 - Confirm the animated border disappears after errors.
 - Confirm saved API keys load correctly after reopening the popup.
@@ -501,75 +511,75 @@ Before tagging a release or publishing an update:
 
 ---
 
-🛠️ Troubleshooting
+## 🛠️ Troubleshooting
 
-Gemini API key missing
+### Gemini API Key Missing
 
 Open the AI Text Enhancer Pro popup.
 
 Create a Gemini API key at:
 
-https://aistudio.google.com/apikey
+**https://aistudio.google.com/apikey**
 
-Paste the key into the Gemini API Key field and click Save Keys.
+Paste the key into the **Gemini API Key** field and click **Save Keys**.
 
 ---
 
-No valid API key
+### No Valid API Key
 
 Make sure at least one valid provider key has been entered.
 
 Recommended:
 
-Gemini API Key
+**Gemini API Key**
 
 Optional:
 
-OpenRouter API Key
+**OpenRouter API Key**
 
 ---
 
-Extension toolbar does not appear
+### Extension Toolbar Does Not Appear
 
 Try:
 
 1. Refresh the webpage.
 2. Click inside an editable text field.
-3. Reload the extension from "chrome://extensions".
+3. Reload the extension from `chrome://extensions`.
 4. Refresh the webpage again.
 
 ---
 
-Keyboard shortcut does not work
+### Keyboard Shortcut Does Not Work
 
 Open:
 
-"chrome://extensions/shortcuts"
+`chrome://extensions/shortcuts`
 
 Check whether the AI Text Enhancer Pro shortcut is assigned.
 
 ---
 
-Extension stopped working after source-code changes
+### Extension Stopped Working After Source Changes
 
 Open:
 
-"chrome://extensions"
+`chrome://extensions`
 
-Find AI Text Enhancer Pro.
+Find **AI Text Enhancer Pro**.
 
 Click:
 
-Reload
+**Reload**
 
 Then refresh any webpages that were already open.
 
 ---
 
-⚠️ Limitations
+## ⚠️ Limitations
 
-- Protected browser pages such as "chrome://" pages do not allow normal content-script injection.
-- Provider availability is controlled by the external AI provider.
+- Protected browser pages such as `chrome://` pages do not allow normal content-script injection.
+- Provider availability is controlled by the external AI providers.
 - API quotas and rate limits are controlled by the provider.
 - Model availability may change over time.
 - API pricing or free-tier limits may change according to provider policies.
@@ -580,29 +590,25 @@ Then refresh any webpages that were already open.
 
 ---
 
-🔄 Updating the Extension
+## 🔄 Updating the Extension
 
 When using the unpacked version:
 
 1. Download or pull the latest project files.
-
 2. Replace or update the existing source files.
-
 3. Open:
-   
-   "chrome://extensions"
 
-4. Find AI Text Enhancer Pro.
+   `chrome://extensions`
 
-5. Click Reload.
-
+4. Find **AI Text Enhancer Pro**.
+5. Click **Reload**.
 6. Refresh any already-open webpages.
 
-Your saved API settings may remain in Chrome extension storage during normal source updates, but removing the extension or clearing its storage may remove saved keys.
+Saved API settings may remain in Chrome extension storage during normal source updates, but removing the extension or clearing its storage may remove saved keys.
 
 ---
 
-🤝 Contributing
+## 🤝 Contributing
 
 Contributions, bug reports, compatibility improvements, and feature suggestions are welcome.
 
@@ -616,14 +622,14 @@ Before submitting changes:
 
 ---
 
-📄 License
+## 📄 License
 
-Released under the MIT License.
+Released under the **MIT License**.
 
-See "LICENSE" for details.
+See `LICENSE` for details.
 
 ---
 
-✨ AI Text Enhancer Pro
+## ✨ AI Text Enhancer Pro
 
 Enhance, rewrite, translate, summarize, and generate text directly inside your browser using your own AI API key.
